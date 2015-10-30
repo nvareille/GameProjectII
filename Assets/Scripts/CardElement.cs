@@ -17,7 +17,8 @@ public class CardElement {
     //mettre un malus elem
     [SerializeField]
     private string m_lastWillDescription;
-    //mettre un last will 
+    [SerializeField]
+    private ELastWill m_lastWillPow;
 
     [SerializeField]
     private bool m_unlockable;
@@ -25,4 +26,18 @@ public class CardElement {
     //mettre aussi une condition d'unlock
     [SerializeField]
     private int[] m_nextCards;
+    [SerializeField]
+    protected int m_maxHp;
+    [SerializeField]
+    protected int m_baseAttack;
+    [SerializeField]
+    protected int m_defence;
+
+    public int GetId() { return m_id; }
+    public string GetName() { return m_name; }
+    public ELastWill GetLastWill() { return m_lastWillPow; }
+    public int GetHp() { return m_maxHp; }
+    public int GetAttack() { return m_baseAttack; }
+    public int GetDefence() { return m_defence; }
+
 }

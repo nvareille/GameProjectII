@@ -11,4 +11,22 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: NewCardList
   m_EditorClassIdentifier: Assembly-CSharp::CardList
-  Cards: []
+  Cards:
+  - _isUnlocked: 0
+    m_id: 0
+    m_name: 
+    m_picture: {fileID: 0}
+    m_malusDescription: 
+    m_lastWillDescription: 
+    m_lastWillPow: 0
+    m_unlockable: 0
+    m_nextCards: 
+  - _isUnlocked: 0
+    m_id: 0
+    m_name: 
+    m_picture: {fileID: 0}
+    m_malusDescription: 
+    m_lastWillDescription: 
+    m_lastWillPow: 0
+    m_unlockable: 0
+    m_nextCards: 

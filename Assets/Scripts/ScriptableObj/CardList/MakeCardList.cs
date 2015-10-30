@@ -9,7 +9,7 @@ public class MakeCardList {
     {
         CardList asset = ScriptableObject.CreateInstance<CardList>();
 
-        AssetDatabase.CreateAsset(asset, "Assets/NewCardList.asset");
+        AssetDatabase.CreateAsset(asset, "Assets/ScriptableObj/NewCardList.asset");
         AssetDatabase.SaveAssets();
 
         EditorUtility.FocusProjectWindow();
