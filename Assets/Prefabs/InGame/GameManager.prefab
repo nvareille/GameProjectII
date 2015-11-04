@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_cardList: {fileID: 11400000, guid: 013358a86098e5b4fbe8c5789b31f448, type: 2}
-  m_hand: 
+  m_hand: 0000000001000000
 --- !u!114 &11428802
 MonoBehaviour:
   m_ObjectHideFlags: 1

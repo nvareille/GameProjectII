@@ -40,4 +40,14 @@ public class CardElement {
     public int GetAttack() { return m_baseAttack; }
     public int GetDefence() { return m_defence; }
 
+    public void SetParams(CardElement other)
+    {
+        _isUnlocked = other._isUnlocked;
+        m_id = other.GetId();
+        m_name = other.GetName();
+        m_lastWillPow = other.GetLastWill();
+        m_maxHp = other.GetHp();
+        m_baseAttack = other.GetAttack();
+        m_defence = other.GetDefence();
+    }
 }

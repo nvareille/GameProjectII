@@ -22,7 +22,7 @@ public class MyCharacterController : MonoBehaviour
 	{
 	    float direction = Input.GetAxis("Horizontal");
 
-        Debug.Log(direction);
+        //Debug.Log(direction);
 
 	    if (direction > 0.001 || direction < -0.001)
 	    {
