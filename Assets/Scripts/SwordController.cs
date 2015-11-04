@@ -3,10 +3,16 @@ using System.Collections;
 
 public class SwordController : MonoBehaviour
 {
+    private Animator Animator;
     private bool Activated;
     public float Lasting;
     private float LastingTemp;
     public Collider2D SwordCollider;
+
+    void Start()
+    {
+        Animator = transform.parent.GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -23,6 +29,7 @@ public class SwordController : MonoBehaviour
 
     public void ActivateSword()
     {
+        Animator.SetBool("Attacking", true);
         Activated = true;
         SwordCollider.enabled = true;
         LastingTemp = Lasting;
@@ -30,6 +37,7 @@ public class SwordController : MonoBehaviour
 
     public void DeactivateSword()
     {
+        Animator.SetBool("Attacking", false);
         Activated = false;
         SwordCollider.enabled = false;
     }
