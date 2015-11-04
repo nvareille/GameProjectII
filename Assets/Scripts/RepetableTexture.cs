@@ -18,10 +18,10 @@ public class RepetableTexture : MonoBehaviour {
 		
 		// Loop through and spit out repeated tiles
 		GameObject child;
-		for (int i = 0, l = (int)Mathf.Round(sprite.bounds.size.y); i < l; i++) {
-			for (int j = 0, jl = (int)Mathf.Round(sprite.bounds.size.x); i < jl; i++) {
+		for (int i = 0, l = (int)Mathf.Round(sprite.bounds.size.y); i <= l; i++) {
+			for (int j = 0, jl = (int)Mathf.Round(sprite.bounds.size.x); i <= jl; i++) {
 				child = Instantiate(childPrefab) as GameObject;
-				child.transform.position = transform.position - (new Vector3(spriteSize.x * j, spriteSize.y * i, 0));
+				child.transform.position = transform.position - (new Vector3(spriteSize.x * i, spriteSize.y * j, 0));
 				child.transform.parent = transform;
 			}
 		}
