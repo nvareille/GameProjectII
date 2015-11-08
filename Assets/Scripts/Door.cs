@@ -5,6 +5,7 @@ public class Door : MonoBehaviour {
 
 	
 	bool isOpen = false;
+	public string SceneLoader;
 	public Texture2D openDoor;
 	
 	void OnTriggerStay2D(Collider2D a) {
@@ -14,6 +15,7 @@ public class Door : MonoBehaviour {
 			SpriteRenderer spriterenderer = this.GetComponent<SpriteRenderer>();
 			spriterenderer.sprite = Sprite.Create(openDoor, new Rect(0, 0, openDoor.width, openDoor.height), new Vector2(0.5f, 0.5f));
 			isOpen = true;
+			Application.LoadLevel(SceneLoader);
 		}
 	}
 
