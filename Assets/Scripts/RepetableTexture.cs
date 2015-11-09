@@ -17,11 +17,12 @@ public class RepetableTexture : MonoBehaviour {
 		childSprite.sprite = sprite.sprite;
 		
 		// Loop through and spit out repeated tiles
-		float offsetY = -((sprite.bounds.size.y / 2.0f));
-		float offsetX = -((sprite.bounds.size.x / 2.0f));
+		float offsetY = -((sprite.transform.localScale.y / 2.0f));
+		float offsetX = -((sprite.transform.localScale.x / 2.0f));
+
 		GameObject child;
-		for (int i = 0, l = (int)Mathf.Round(sprite.bounds.size.y); i < l; i++) {
-			for (int j = 0, jl = (int)Mathf.Round(sprite.bounds.size.x); j <= jl; j++) {
+		for (int i = 0, l = (int)Mathf.Round(sprite.transform.localScale.y); i < l; i++) {
+			for (int j = 0, jl = (int)Mathf.Round(sprite.transform.localScale.x); j < jl; j++) {
 				child = Instantiate(childPrefab) as GameObject;
 				child.transform.position = transform.position - (new Vector3(spriteSize.x * (offsetX + j), spriteSize.y * (i + offsetY), 0));
 				child.transform.parent = transform;
