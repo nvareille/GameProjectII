@@ -51,7 +51,7 @@ public class SlimeMove : MonoBehaviour {
 			else
 			{*/
 
-			rigidbody2D.AddForce (normal * -recoil);
+			GetComponent<Rigidbody2D>().AddForce (normal * -recoil);
 			CharacterStats cs = (CharacterStats) target.GetComponent(typeof(CharacterStats));
 			if (cs)
 				cs.TakeDamage(((CharacterStats)GetComponent(typeof(CharacterStats))).GetAttack());

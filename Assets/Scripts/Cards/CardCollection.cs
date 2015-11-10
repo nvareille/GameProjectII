@@ -21,6 +21,11 @@ public class CardCollection : MonoBehaviour {
         return elems;
     }
 
+    public CardElement GetCardById(int id)
+    {
+        return m_cardList.GetById(id);
+    }
+
 	// Use this for initialization
 	void Start () {
 	

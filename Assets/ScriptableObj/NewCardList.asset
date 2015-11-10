@@ -17,7 +17,7 @@ MonoBehaviour:
     m_name: King Arthur
     m_picture: {fileID: 0}
     m_malusDescription: 
-    m_lastWillDescription: 
+    m_lastWillDescription: boost the next hero
     m_lastWillPow: 2
     m_unlockable: 0
     m_nextCards: 
@@ -29,7 +29,7 @@ MonoBehaviour:
     m_name: Benzai
     m_picture: {fileID: 0}
     m_malusDescription: 
-    m_lastWillDescription: 
+    m_lastWillDescription: Explode when he die
     m_lastWillPow: 1
     m_unlockable: 0
     m_nextCards: 
@@ -48,3 +48,15 @@ MonoBehaviour:
     m_maxHp: 2
     m_baseAttack: 0
     m_defence: 0
+  - _isUnlocked: 1
+    m_id: 3
+    m_name: Leonidas
+    m_picture: {fileID: 0}
+    m_malusDescription: This IS SPARTAAA
+    m_lastWillDescription: Stay in the zone
+    m_lastWillPow: 0
+    m_unlockable: 0
+    m_nextCards: 
+    m_maxHp: 200
+    m_baseAttack: 14
+    m_defence: 1

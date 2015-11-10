@@ -15,13 +15,13 @@ public class PlayableCharacter : CharacterStats {
 
     public void printHp()
     {
-
+        Debug.Log("plop");
     }
 
     //start coroutine de la mort
     void Die()
     {
-        m_lastWillFunc.UseLastWill(m_lastWillPow, gameObject);
+        m_lastWillFunc.UseLastWill(m_lastWillPow, gameObject, m_id);
     }
 
     public void LoadPlayerFromCard(CardElement elem)

@@ -37,6 +37,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &183006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 478672}
+  - 61: {fileID: 6164598}
+  m_Layer: 0
+  m_Name: Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &197276
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,6 +82,7 @@ Transform:
   m_Children:
   - {fileID: 489600}
   - {fileID: 456852}
+  - {fileID: 478672}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &456852
@@ -80,6 +97,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 401038}
   m_RootOrder: 1
+--- !u!4 &478672
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 401038}
+  m_RootOrder: 2
 --- !u!4 &489600
 Transform:
   m_ObjectHideFlags: 1
@@ -107,7 +136,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 1
+  m_Constraints: 4
 --- !u!58 &5864992
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -118,9 +147,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -.119999997, y: -.200000003}
+  m_Offset: {x: -.119999997, y: -.219999999}
   serializedVersion: 2
-  m_Radius: .119999997
+  m_Radius: .0799999982
 --- !u!61 &6138122
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -133,7 +162,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: -.119999997, y: .0299999993}
   serializedVersion: 2
-  m_Size: {x: .189999998, y: .5}
+  m_Size: {x: .170000002, y: .5}
 --- !u!61 &6142892
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -142,11 +171,24 @@ BoxCollider2D:
   m_GameObject: {fileID: 143612}
   m_Enabled: 0
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: .0700000003, y: .0900000036}
   serializedVersion: 2
-  m_Size: {x: .439999998, y: .719522953}
+  m_Size: {x: .600000024, y: .719522953}
+--- !u!61 &6164598
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183006}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: .349999994, y: .449999988}
 --- !u!95 &9513078
 Animator:
   serializedVersion: 3
@@ -175,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23433d1163e9600498c26da567269f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
+  Speed: 6
   Sword: {fileID: 11437806}
   Feet: {fileID: 11472512}
 --- !u!114 &11437806

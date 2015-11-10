@@ -35,10 +35,11 @@ public class LastWillDb : MonoBehaviour {
         return m_prevLastWill;
     }
 
-    public void UseLastWill(ELastWill pow, GameObject obj)
+    public void UseLastWill(ELastWill pow, GameObject obj, int id)
     {
         m_lastWillD[pow](obj);
         m_prevLastWill = pow;
+        gameObject.GetComponent<GameController>().ConsumeHero(id);
     }
 
     void ApplyRock(GameObject obj)

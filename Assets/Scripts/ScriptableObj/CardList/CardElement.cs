@@ -36,6 +36,7 @@ public class CardElement {
     public int GetId() { return m_id; }
     public string GetName() { return m_name; }
     public ELastWill GetLastWill() { return m_lastWillPow; }
+    public string GetLastWillDesc() { return m_lastWillDescription; }
     public int GetHp() { return m_maxHp; }
     public int GetAttack() { return m_baseAttack; }
     public int GetDefence() { return m_defence; }
@@ -46,6 +47,7 @@ public class CardElement {
         m_id = other.GetId();
         m_name = other.GetName();
         m_lastWillPow = other.GetLastWill();
+        m_lastWillDescription = other.GetLastWillDesc();
         m_maxHp = other.GetHp();
         m_baseAttack = other.GetAttack();
         m_defence = other.GetDefence();
