@@ -59,8 +59,8 @@ public class SwordController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D c)
     {
         Debug.Log(c.gameObject.name);
-        if (c.gameObject.name == "Monster")
-            Destroy(c.gameObject);
+        if (c.gameObject.tag == "Player")
+            c.gameObject.GetComponent<CharacterStats>().TakeDamage(transform.parent.GetComponent<PlayableCharacter>().GetAttack());
         Debug.Log("test");
     }
 }
