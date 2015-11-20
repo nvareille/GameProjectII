@@ -21,6 +21,18 @@ public class CardCollection : MonoBehaviour {
         return elems;
     }
 
+    public List<CardElement> GetCollection()
+    {
+        List<CardElement> elems = new List<CardElement>();
+
+        foreach(CardElement obj in m_cardList.Cards)
+        {
+            elems.Add(obj);
+        }
+
+        return elems;
+    }
+
     public CardElement GetCardById(int id)
     {
         return m_cardList.GetById(id);
