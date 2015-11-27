@@ -15,6 +15,8 @@ public class CardElement {
     [SerializeField]
     private Texture2D m_picture;
     [SerializeField]
+    private Color m_color;
+    [SerializeField]
     private string m_malusDescription;
     //mettre un malus elem
     [SerializeField]
@@ -43,6 +45,7 @@ public class CardElement {
     public int GetHp() { return m_maxHp; }
     public int GetAttack() { return m_baseAttack; }
     public int GetDefence() { return m_defence; }
+    public Color GetColor() { return m_color; }
 
     public void SetParams(CardElement other)
     {

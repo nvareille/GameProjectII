@@ -9,7 +9,7 @@ public class CardCollection : MonoBehaviour {
     [SerializeField]
     private List<int> m_hand;
 
-    public List<CardElement> GetDeck()
+    public List<CardElement> DrawCard()
     {
         List<CardElement> elems = new List<CardElement>();
 

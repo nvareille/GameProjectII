@@ -14,9 +14,10 @@ MonoBehaviour:
   Cards:
   - _isUnlocked: 1
     m_id: 0
-    m_cost: 0
+    m_cost: 4
     m_name: King Arthur
     m_picture: {fileID: 0}
+    m_color: {r: 0, g: .420689583, b: 1, a: 1}
     m_malusDescription: 
     m_lastWillDescription: boost the next hero
     m_lastWillPow: 2
@@ -27,9 +28,10 @@ MonoBehaviour:
     m_defence: 12
   - _isUnlocked: 1
     m_id: 1
-    m_cost: 0
+    m_cost: 9
     m_name: Benzai
     m_picture: {fileID: 0}
+    m_color: {r: 1, g: 0, b: 0, a: 1}
     m_malusDescription: 
     m_lastWillDescription: Explode when he die
     m_lastWillPow: 1
@@ -43,6 +45,7 @@ MonoBehaviour:
     m_cost: 0
     m_name: Henry
     m_picture: {fileID: 0}
+    m_color: {r: 0, g: 0, b: 0, a: 0}
     m_malusDescription: 
     m_lastWillDescription: 
     m_lastWillPow: 0
@@ -53,9 +56,10 @@ MonoBehaviour:
     m_defence: 0
   - _isUnlocked: 1
     m_id: 3
-    m_cost: 0
+    m_cost: 2
     m_name: Leonidas
     m_picture: {fileID: 0}
+    m_color: {r: .903448343, g: 1, b: 0, a: 1}
     m_malusDescription: This IS SPARTAAA
     m_lastWillDescription: Stay in the zone
     m_lastWillPow: 0
@@ -64,3 +68,59 @@ MonoBehaviour:
     m_maxHp: 200
     m_baseAttack: 14
     m_defence: 1
+  - _isUnlocked: 1
+    m_id: 4
+    m_cost: 19
+    m_name: Sephiroth
+    m_picture: {fileID: 0}
+    m_color: {r: .720588207, g: .720588207, b: .720588207, a: 1}
+    m_malusDescription: I am god
+    m_lastWillDescription: Explode
+    m_lastWillPow: 1
+    m_unlockable: 0
+    m_nextCards: 
+    m_maxHp: 200
+    m_baseAttack: 20
+    m_defence: 20
+  - _isUnlocked: 1
+    m_id: 5
+    m_cost: 1
+    m_name: The old man
+    m_picture: {fileID: 0}
+    m_color: {r: .86206913, g: 0, b: 1, a: 1}
+    m_malusDescription: 
+    m_lastWillDescription: the next hero will be buff
+    m_lastWillPow: 2
+    m_unlockable: 0
+    m_nextCards: 
+    m_maxHp: 80
+    m_baseAttack: 10
+    m_defence: 0
+  - _isUnlocked: 0
+    m_id: 6
+    m_cost: 10
+    m_name: Prince Charming
+    m_picture: {fileID: 0}
+    m_color: {r: 0, g: .796999991, b: 0, a: 1}
+    m_malusDescription: 
+    m_lastWillDescription: Stay in the zone
+    m_lastWillPow: 0
+    m_unlockable: 0
+    m_nextCards: 
+    m_maxHp: 160
+    m_baseAttack: 16
+    m_defence: 8
+  - _isUnlocked: 1
+    m_id: 7
+    m_cost: 3
+    m_name: Normal-man
+    m_picture: {fileID: 0}
+    m_color: {r: .136786312, g: .781014979, b: .808823526, a: 1}
+    m_malusDescription: 
+    m_lastWillDescription: Explode
+    m_lastWillPow: 1
+    m_unlockable: 0
+    m_nextCards: 
+    m_maxHp: 120
+    m_baseAttack: 16
+    m_defence: 10

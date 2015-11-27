@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour {
         if (instance)
         {
             GameObject.DestroyImmediate(gameObject);
-            SetCurLevel();
+            instance.SetCurLevel();
         }
         else
         {
@@ -62,16 +62,16 @@ public class GameController : MonoBehaviour {
         else
         {
             m_currentSceneId = int.Parse(levelName.Split(new char[] { '_', '.' })[1]);
-            Debug.Log(m_currentSceneId);
             m_curentState = EGameState.SELECTION;
-            Time.timeScale = 0;
             StartCoroutine(DisplayDeckOrder(1));
         }
+        Debug.Log(this.GetInstanceID());
     }
 
     IEnumerator DisplayDeckOrder(float time)
     {
         yield return new WaitForSeconds(time);
+        Time.timeScale = 0;
         GameObject.FindObjectOfType<CardSelectionPanel>().DisplayDeck();
     }
 
