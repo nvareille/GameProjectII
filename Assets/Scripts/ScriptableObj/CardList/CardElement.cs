@@ -9,6 +9,8 @@ public class CardElement {
     [SerializeField]
     private int m_id;
     [SerializeField]
+    private int m_cost;
+    [SerializeField]
     private string m_name;
     [SerializeField]
     private Texture2D m_picture;
@@ -34,6 +36,7 @@ public class CardElement {
     protected int m_defence;
 
     public int GetId() { return m_id; }
+    public int GetCost() { return m_cost; }
     public string GetName() { return m_name; }
     public ELastWill GetLastWill() { return m_lastWillPow; }
     public string GetLastWillDesc() { return m_lastWillDescription; }
@@ -45,6 +48,7 @@ public class CardElement {
     {
         _isUnlocked = other._isUnlocked;
         m_id = other.GetId();
+        m_cost = other.GetCost();
         m_name = other.GetName();
         m_lastWillPow = other.GetLastWill();
         m_lastWillDescription = other.GetLastWillDesc();

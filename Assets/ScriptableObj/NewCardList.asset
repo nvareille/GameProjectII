@@ -14,6 +14,7 @@ MonoBehaviour:
   Cards:
   - _isUnlocked: 1
     m_id: 0
+    m_cost: 0
     m_name: King Arthur
     m_picture: {fileID: 0}
     m_malusDescription: 
@@ -26,6 +27,7 @@ MonoBehaviour:
     m_defence: 12
   - _isUnlocked: 1
     m_id: 1
+    m_cost: 0
     m_name: Benzai
     m_picture: {fileID: 0}
     m_malusDescription: 
@@ -38,6 +40,7 @@ MonoBehaviour:
     m_defence: 8
   - _isUnlocked: 0
     m_id: 2
+    m_cost: 0
     m_name: Henry
     m_picture: {fileID: 0}
     m_malusDescription: 
@@ -50,6 +53,7 @@ MonoBehaviour:
     m_defence: 0
   - _isUnlocked: 1
     m_id: 3
+    m_cost: 0
     m_name: Leonidas
     m_picture: {fileID: 0}
     m_malusDescription: This IS SPARTAAA
