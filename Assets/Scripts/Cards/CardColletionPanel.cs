@@ -13,9 +13,12 @@ public class CardColletionPanel : MonoBehaviour {
     private GameObject m_grid;
     [SerializeField]
     private GameObject m_selectedGrid;
+    [SerializeField]
+    private Text m_costText;
 
     private List<int> m_idSelecteds;
-    private int m_maxCharge;
+    private int m_maxCost;
+    private int m_curentCost;
 
     private CardCollection m_collection;
     private GameController m_MCP;
@@ -27,6 +30,8 @@ public class CardColletionPanel : MonoBehaviour {
         m_MCP = GameObject.FindObjectOfType<GameController>();
         m_idSelecteds = new List<int>();
         DisplayCollection();
+        m_curentCost = 0;
+        m_maxCost = 20;
     }
 
     public void DisplayCollection()
@@ -66,7 +71,60 @@ public class CardColletionPanel : MonoBehaviour {
         obj.GetComponent<Toggle>().enabled = false;
         GameObject inst = Instantiate(m_selectedCardPrefab);
         inst.transform.parent = m_selectedGrid.transform;
+        m_curentCost += card.GetCost();
+        UpdateCost();
         inst.GetComponent<CardUI>().Init(card);
+        inst.transform.Find("Button").GetComponent<Button>().onClick.AddListener(() => { RemoveSelectHero(id, card.GetCost()); });
         //m_selectedCard.transform.Find("Name").GetComponent<Text>().text = card.GetName();
+    }
+
+    void UpdateCost()
+    {
+        m_costText.text = m_curentCost + " / " + m_maxCost;
+    }
+
+    public void RemoveSelectHero(int id, int cost)
+    {
+        GameObject obj = FindCardById(id);
+        if (obj == null)
+        {
+            Debug.LogError("Can't find card with id : " + id);
+            return;
+        }
+        m_idSelecteds.Remove(id);
+        m_curentCost -= cost;
+        UpdateCost();
+        obj.GetComponent<Toggle>().isOn = false;
+        obj.GetComponent<Toggle>().enabled = true;
+        foreach (Transform child in m_selectedGrid.transform)
+        {
+            if (child.GetComponent<CardUI>().GetId() == id)
+            {
+                Destroy(child.gameObject);
+                break;
+            }
+        }
+    }
+
+    GameObject FindCardById(int id)
+    {
+        foreach (Transform child in m_grid.transform)
+        {
+            if (child.GetComponent<CardUI>().GetId() == id)
+            {
+                return child.gameObject;
+            }
+        }
+
+        return null;
+    }
+
+    public void ValadiateSelection()
+    {
+        if (m_curentCost <= m_maxCost)
+        {
+            m_collection.SetDeck(m_idSelecteds);
+            m_MCP.ReadyToPlay();
+        }
     }
 }

@@ -33,6 +33,7 @@ public class CardUI : MonoBehaviour {
         elem = card;
         Debug.Log(card.GetName() + " init");
         _name.text = elem.GetName();
+        _level.text = elem.GetCost().ToString();
         if (_lastWill != null)
             _lastWill.text = elem.GetLastWillDesc();
         
