@@ -12,6 +12,8 @@ public class CardUI : MonoBehaviour {
     private Text _lastWill;
     [SerializeField]
     private Text _default;
+    [SerializeField]
+    private GameObject _filter;
 
     private CardElement elem;
     public int GetId() { return elem.GetId(); }
@@ -31,8 +33,10 @@ public class CardUI : MonoBehaviour {
         elem = card;
         Debug.Log(card.GetName() + " init");
         _name.text = elem.GetName();
-        _lastWill.text = elem.GetLastWillDesc();
-
+        _level.text = elem.GetCost().ToString();
+        if (_lastWill != null)
+            _lastWill.text = elem.GetLastWillDesc();
+        
     }
 
     public void Init(CardElement card)

@@ -69,12 +69,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 156716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5383badbc3fb5de40a7c252a0ccc5a15, type: 3}
+  m_Script: {fileID: 11500000, guid: 60a1e6986a95b8a488ac564466575a53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  step: 1
-  recoil: 200
+  m_maxHp: 20
+  m_baseAttack: 15
+  m_defence: 2
+  m_bonusAttack: 0
 --- !u!114 &11456716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,13 +84,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 156716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a1f51607c5b02d40954c959e7a6a199, type: 3}
+  m_Script: {fileID: 11500000, guid: ca492c020b4760e4c80a3b59d18aa497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHp: 100
-  m_baseAttack: 30
-  m_defence: 10
-  m_bonusAttack: 1
+  target: {fileID: 0}
+  aggro: 4
+  step: 1
+  recoil: 100
 --- !u!212 &21256716
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -122,7 +123,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_maxHp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_baseAttack
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_defence
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 156716}

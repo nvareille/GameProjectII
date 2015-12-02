@@ -27,7 +27,7 @@ public class CardSelectionPanel : MonoBehaviour {
     public void DisplayDeck()
     {
         gameObject.SetActive(true);
-        List<CardElement> Elems = m_collection.GetHand();
+        List<CardElement> Elems = m_collection.DrawCard();
         List<int> dead = m_MCP.GetDeadHeroes();
         if (dead.Count == Elems.Count)
         {

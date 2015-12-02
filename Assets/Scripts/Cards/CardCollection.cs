@@ -7,9 +7,9 @@ public class CardCollection : MonoBehaviour {
     [SerializeField]
     private CardList m_cardList;
     [SerializeField]
-    private int[] m_hand;
+    private List<int> m_hand;
 
-    public List<CardElement> GetHand()
+    public List<CardElement> DrawCard()
     {
         List<CardElement> elems = new List<CardElement>();
 
@@ -21,9 +21,26 @@ public class CardCollection : MonoBehaviour {
         return elems;
     }
 
+    public List<CardElement> GetCollection()
+    {
+        List<CardElement> elems = new List<CardElement>();
+
+        foreach(CardElement obj in m_cardList.Cards)
+        {
+            elems.Add(obj);
+        }
+
+        return elems;
+    }
+
     public CardElement GetCardById(int id)
     {
         return m_cardList.GetById(id);
+    }
+
+    public void SetDeck(List<int> list)
+    {
+        m_hand = list;
     }
 
 	// Use this for initialization

@@ -30,8 +30,10 @@ public class PlayableCharacter : CharacterStats {
         m_lastWillPow = elem.GetLastWill();
         m_name = elem.GetName();
         m_maxHp = elem.GetHp();
+        m_curHp = m_maxHp;
         m_baseAttack = elem.GetAttack();
         m_defence = elem.GetDefence();
+        GetComponent<SpriteRenderer>().color = elem.GetColor();
         if (m_lastWillFunc.GetPreviousWill() == ELastWill.BOOST)
             m_bonusAttack = 30;
     }
