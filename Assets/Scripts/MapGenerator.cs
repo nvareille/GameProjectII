@@ -7,20 +7,31 @@ using Access = System.Boolean;
 
 public class MapGenerator : MonoBehaviour {
 
+	[SerializeField]
+	private GameObject Bloc1;
+	[SerializeField]
+	private GameObject Bloc2;
+	[SerializeField]
+	private GameObject Bloc3;
+	[SerializeField]
+	private GameObject Bloc4;
+	[SerializeField]
+	private GameObject Bloc5;
+
 	public struct pair {
-		public string levelName;
+		public GameObject gameobject;
 		public Vector2 pos;
 	};
 
 	public struct bloc {
-		public string name;
+		public GameObject name;
 		public bool up;
 		public bool down;
 		public bool left;
 		public bool right;
 		public int nbtime;
 
-		public bloc(string n, bool u, bool d, bool l, bool r, int t) {
+		public bloc(GameObject n, bool u, bool d, bool l, bool r, int t) {
 			this.name = n;
 			this.up = u;
 			this.down = d;
@@ -42,11 +53,11 @@ public class MapGenerator : MonoBehaviour {
 		this.level = new List<pair>();
 		this.tuples = new bloc[5];
 		this.map = new bool[10][];
-		this.tuples [0] = new bloc("Bloc1", AsNotAccess, AsAccess, AsNotAccess, AsNotAccess, 1);
-		this.tuples [1] = new bloc("Bloc2", AsAccess, AsNotAccess, AsNotAccess, AsNotAccess, 1);
-		this.tuples [2] = new bloc("Bloc3", AsNotAccess, AsNotAccess, AsAccess, AsNotAccess, 1);
-		this.tuples [3] = new bloc("Bloc4", AsNotAccess, AsNotAccess, AsNotAccess, AsAccess, 1);
-		this.tuples [4] = new bloc("Bloc5", AsAccess, AsAccess, AsAccess, AsAccess, 1);
+		this.tuples [0] = new bloc(Bloc1, AsNotAccess, AsAccess, AsNotAccess, AsNotAccess, 3);
+		this.tuples [1] = new bloc(Bloc2, AsAccess, AsNotAccess, AsNotAccess, AsNotAccess, 5);
+		this.tuples [2] = new bloc(Bloc3, AsNotAccess, AsNotAccess, AsAccess, AsNotAccess, 7);
+		this.tuples [3] = new bloc(Bloc4, AsNotAccess, AsNotAccess, AsNotAccess, AsAccess, 3);
+		this.tuples [4] = new bloc(Bloc5, AsAccess, AsAccess, AsAccess, AsAccess, 1);
 
 		for (int i = 0; i != 10; ++i) {
 			this.map[i] = new bool[10];
@@ -67,6 +78,7 @@ public class MapGenerator : MonoBehaviour {
 			return;
 		List<bloc> list = new List<bloc> ();
 		int size = 0;
+
 		if (dir == Direction.UP) {
 			foreach (bloc w in  this.tuples) {
 				if (w.up == true && w.nbtime > 0) {
@@ -101,48 +113,48 @@ public class MapGenerator : MonoBehaviour {
 			return;
 		}
 
+		map [y] [x] = true;
+
 		int j = Random.Range (0, size);
 		bloc a = list [j];
 
-		for (int i = 0; i!=this.tuples.Length; ++i) {
+		for (int i = 0; i != this.tuples.Length; ++i) {
 			if (this.tuples[i].name == a.name) {
 				this.tuples[i].nbtime -= 1;
 			}
 		}
 
-		map [y] [x] = true;
 		pair ed = new pair();
-		ed.levelName = a.name;
+		print (a.name);
+		GameObject zez = Instantiate (a.name);
+		ed.gameobject = zez;
 		ed.pos = new Vector2 (translation.x, translation.y);
 		this.level.Add (ed);
-		Application.LoadLevelAdditive (a.name);
-
-		Vector2 newPosition = new Vector2 (translation.x, translation.y);
-/*
-		if (a.left == true) {
-
-			newPosition.x -= 1;
-			generateBloc(newPosition, x - 1, y, Direction.RIGHT);
-		}
-
-		if (a.right == true) {
-
-			newPosition.x += 1;
-			generateBloc(newPosition, x + 1, y, Direction.RIGHT);
-		}
 
 		if (a.up == true) {
 
-			newPosition.y -= 1;
-			generateBloc(newPosition, x, y + 1, Direction.RIGHT);
+			Vector2 newPosition = new Vector2 (translation.x, translation.y);
+			newPosition.y += 10;
+			generateBloc(newPosition, x, y - 1, Direction.UP);
 		}
-		
 		if (a.down == true) {
 
-			newPosition.y += 1;
-			generateBloc(newPosition, x, y - 1, Direction.RIGHT);
+			Vector2 newPosition = new Vector2 (translation.x, translation.y);
+			newPosition.y -= 10;
+			generateBloc(newPosition, x, y + 1, Direction.DOWN);
 		}
-*/
+		if (a.right == true) {
+
+			Vector2 newPosition = new Vector2 (translation.x, translation.y);
+			newPosition.x += 21;
+			generateBloc(newPosition, x + 1, y, Direction.RIGHT);
+		}
+		if (a.left == true) {
+	
+			Vector2 newPosition = new Vector2 (translation.x, translation.y);
+			newPosition.x -= 21;
+			generateBloc(newPosition, x - 1, y, Direction.LEFT);
+		}
 
 	}
 
@@ -153,8 +165,8 @@ public class MapGenerator : MonoBehaviour {
 			map [5] [5] = true;
 			generateBloc (new Vector2 (0, 10), 5, 4, Direction.UP);
 			generateBloc (new Vector2 (0, -10), 5, 6, Direction.DOWN);
-			generateBloc (new Vector2 (21, 0), 4, 5, Direction.RIGHT);
-			generateBloc (new Vector2 (-21, 0), 6,5, Direction.LEFT);
+			generateBloc (new Vector2 (21, 0), 6, 5, Direction.RIGHT);
+			generateBloc (new Vector2 (-21, 0), 4,5, Direction.LEFT);
 			firstCall = false;
 		}
 	}
@@ -167,10 +179,8 @@ public class MapGenerator : MonoBehaviour {
 		List<pair> removeObject = new List<pair>(); 
 		foreach (pair a in this.level) {
 			try {
-				print ("ok");
-			GameObject q = GameObject.Find (a.levelName);
-			q.transform.Translate (a.pos);
-			removeObject.Add (a);
+				a.gameobject.transform.Translate (a.pos);
+				removeObject.Add (a);
 			} catch  {
 			} finally {
 			}
