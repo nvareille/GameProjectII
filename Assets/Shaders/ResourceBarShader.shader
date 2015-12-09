@@ -56,8 +56,8 @@ Shader "Shader Forge/ResourceBarShader" {
                 float node_9361_if_leA = step(_Filing_var.rgb,1.0);
                 float node_9361_if_leB = step(1.0,_Filing_var.rgb);
                 float node_9457 = 0.0;
-                float4 node_4058 = _Time + _TimeEditor;
-                float2 node_102 = ((i.uv0*0.5)+node_4058.g*float2(-0.25,0));
+                float4 node_1480 = _Time + _TimeEditor;
+                float2 node_102 = ((i.uv0*0.5)+node_1480.g*float2(-0.25,0));
                 float4 _Particles_var = tex2D(_Particles,TRANSFORM_TEX(node_102, _Particles));
                 float3 emissive = ((_Filing_var.rgb*_Color.rgb)+lerp((node_9361_if_leA*node_9457)+(node_9361_if_leB*node_9457),_Particles_var.rgb,node_9361_if_leA*node_9361_if_leB));
                 float3 finalColor = emissive;
