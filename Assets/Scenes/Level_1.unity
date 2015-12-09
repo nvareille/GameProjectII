@@ -471,7 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ae60b33956f422cb0c0287e9bef2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneLoader: Level2
+  SceneLoader: Level_2
   openDoor: {fileID: 2800000, guid: bf65531388ba64fbd8d2829e7710cd20, type: 3}
 --- !u!1 &504978195
 GameObject:

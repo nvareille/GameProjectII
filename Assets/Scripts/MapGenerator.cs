@@ -53,11 +53,11 @@ public class MapGenerator : MonoBehaviour {
 		this.level = new List<pair>();
 		this.tuples = new bloc[5];
 		this.map = new bool[10][];
-		this.tuples [0] = new bloc(Bloc1, AsNotAccess, AsAccess, AsNotAccess, AsNotAccess, 3);
-		this.tuples [1] = new bloc(Bloc2, AsAccess, AsNotAccess, AsNotAccess, AsNotAccess, 5);
-		this.tuples [2] = new bloc(Bloc3, AsNotAccess, AsNotAccess, AsAccess, AsNotAccess, 7);
-		this.tuples [3] = new bloc(Bloc4, AsNotAccess, AsNotAccess, AsNotAccess, AsAccess, 3);
-		this.tuples [4] = new bloc(Bloc5, AsAccess, AsAccess, AsAccess, AsAccess, 1);
+		this.tuples [0] = new bloc(Bloc1, AsNotAccess, AsAccess, AsNotAccess, AsNotAccess, 6);
+		this.tuples [1] = new bloc(Bloc2, AsAccess, AsNotAccess, AsNotAccess, AsNotAccess, 7);
+		this.tuples [2] = new bloc(Bloc3, AsNotAccess, AsNotAccess, AsAccess, AsNotAccess, 9);
+		this.tuples [3] = new bloc(Bloc4, AsNotAccess, AsNotAccess, AsNotAccess, AsAccess, 4);
+		this.tuples [4] = new bloc(Bloc5, AsAccess, AsAccess, AsAccess, AsAccess, 16);
 
 		for (int i = 0; i != 10; ++i) {
 			this.map[i] = new bool[10];
