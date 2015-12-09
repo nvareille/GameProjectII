@@ -8,17 +8,22 @@ public class CardElement {
 
     [SerializeField]
     private int m_id;
+    // cout de la carte pour le deck
     [SerializeField]
     private int m_cost;
+    //nom de la carte
     [SerializeField]
     private string m_name;
+    //image de la carte
     [SerializeField]
     private Texture2D m_picture;
+    //couleur du hero
     [SerializeField]
     private Color m_color;
+    //mettre un malus elem
     [SerializeField]
     private string m_malusDescription;
-    //mettre un malus elem
+    //dernière volonté
     [SerializeField]
     private string m_lastWillDescription;
     [SerializeField]
