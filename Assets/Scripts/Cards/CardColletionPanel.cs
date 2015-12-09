@@ -34,6 +34,10 @@ public class CardColletionPanel : MonoBehaviour {
         m_maxCost = 20;
     }
 
+    /*
+     * Affiche la collection complète de carte
+     * (unlock ou pas) avec toutes les stats 
+     */
     public void DisplayCollection()
     {
         gameObject.SetActive(true);
@@ -56,7 +60,11 @@ public class CardColletionPanel : MonoBehaviour {
         }
     }
 
-
+    /*
+     * Select Hero : prend la carte et save l'id de la carte selectionné,
+     * crée une instance dans la liste des cartes sélectionnées
+     * add un listener sur le nouveau boutton instancié pour le supprimer
+     */
     public void SelectHero(GameObject obj, bool status)
     {
         if (!status)
@@ -70,7 +78,7 @@ public class CardColletionPanel : MonoBehaviour {
         card = m_collection.GetCardById(id);
         obj.GetComponent<Toggle>().enabled = false;
         GameObject inst = Instantiate(m_selectedCardPrefab);
-        inst.transform.parent = m_selectedGrid.transform;
+        inst.transform.SetParent(m_selectedGrid.transform);
         m_curentCost += card.GetCost();
         UpdateCost();
         inst.GetComponent<CardUI>().Init(card);
@@ -78,11 +86,24 @@ public class CardColletionPanel : MonoBehaviour {
         //m_selectedCard.transform.Find("Name").GetComponent<Text>().text = card.GetName();
     }
 
+    //Update le cout du deck et l'affiche
     void UpdateCost()
     {
+        if (m_curentCost <= m_maxCost)
+        {
+            m_costText.color = Color.green;
+        }
+        else
+        {
+            m_costText.color = Color.red;
+        }
         m_costText.text = m_curentCost + " / " + m_maxCost;
     }
 
+    /*
+     * fct qui enlève l'instance se situant dans la liste des heros selectionné
+     * et réactive le toggle qui est dans la liste des héros.
+     */
     public void RemoveSelectHero(int id, int cost)
     {
         GameObject obj = FindCardById(id);
@@ -106,6 +127,7 @@ public class CardColletionPanel : MonoBehaviour {
         }
     }
 
+    //cherche la carte avec un id X dans la collection entière
     GameObject FindCardById(int id)
     {
         foreach (Transform child in m_grid.transform)
@@ -119,6 +141,7 @@ public class CardColletionPanel : MonoBehaviour {
         return null;
     }
 
+    //
     public void ValadiateSelection()
     {
         if (m_curentCost <= m_maxCost)
