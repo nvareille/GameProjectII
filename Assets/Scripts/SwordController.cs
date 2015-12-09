@@ -6,7 +6,9 @@ public class SwordController : MonoBehaviour
     private Animator Animator;
     private bool Activated;
     public float Lasting;
+    public float Cooldown;
     private float LastingTemp;
+    private float CooldownTemp;
     public Collider2D SwordCollider;
 
     void Start()
@@ -25,21 +27,29 @@ public class SwordController : MonoBehaviour
                 DeactivateSword();
             }
         }
+        else
+        {
+            CooldownTemp -= Time.deltaTime;
+        }
     }
 
     public void ActivateSword()
     {
-        Animator.SetBool("Attacking", true);
-        Activated = true;
-        SwordCollider.enabled = true;
-        LastingTemp = Lasting;
+        if (CooldownTemp <= 0)
+        {
+            Animator.SetBool("Attacking", true);
+            Activated = true;
+            SwordCollider.enabled = true;
+            LastingTemp = Lasting;
+            CooldownTemp = Cooldown;
+        }
     }
 
     public void DeactivateSword()
     {
-        Animator.SetBool("Attacking", false);
-        Activated = false;
-        SwordCollider.enabled = false;
+            Animator.SetBool("Attacking", false);
+            Activated = false;
+            SwordCollider.enabled = false;
     }
 
     void OnCollisionEnter2D(Collision2D c)
