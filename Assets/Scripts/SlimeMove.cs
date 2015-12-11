@@ -11,6 +11,8 @@ public class SlimeMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        if (FindObjectOfType<PlayableCharacter>() != null)
+            target = FindObjectOfType<PlayableCharacter>().gameObject;
 		if (step == 0.0f)
 			step = 1.0f;
 		normal = new Vector3 (1.0f, 1.0f, 1.0f);

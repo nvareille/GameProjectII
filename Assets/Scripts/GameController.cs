@@ -54,6 +54,8 @@ public class GameController : MonoBehaviour {
         m_curentHero = null;
         m_idDeads = new List<int>();
 
+        Debug.LogError("SetLevel");
+
         if (levelName.Contains(m_menuScene))
         {
             m_currentSceneId = -1;
@@ -71,6 +73,7 @@ public class GameController : MonoBehaviour {
     IEnumerator DisplayDeckOrder(float time)
     {
         yield return new WaitForSeconds(time);
+        Debug.Log("Time0");
         Time.timeScale = 0;
         GameObject.FindObjectOfType<CardSelectionPanel>().DisplayDeck();
     }
@@ -88,6 +91,11 @@ public class GameController : MonoBehaviour {
         GameObject.FindObjectOfType<PlayableCharacter>().LoadPlayerFromCard(m_curentHero);
         m_curentState = EGameState.GAME;
         Time.timeScale = 1;
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Ennemies");
+        foreach(GameObject obj in objs)
+        {
+            obj.GetComponent<Rigidbody2D>().isKinematic = false;
+        }
         //load un hero avec ces infos
         //play le game
     }

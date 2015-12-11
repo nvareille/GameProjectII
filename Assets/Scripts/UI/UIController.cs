@@ -15,6 +15,11 @@ public class UIController : MonoBehaviour
     // Use this for initialization
 	void Start ()
     {
+
+        if (Stats == null)
+        {
+            Stats = FindObjectOfType<CharacterStats>();
+        }
         BarsMaterials = new Material[2];
         BarsMaterials[0] = new Material(Bars[0].GetComponent<Image>().material);
         BarsMaterials[1] = new Material(Bars[1].GetComponent<Image>().material);
@@ -24,7 +29,7 @@ public class UIController : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void LateUpdate ()
     {
         BarsMaterials[0].SetFloat("_FilingValue", 0.5f - ((float)Stats.GetHp() / (float)Stats.GetMaxHp() / 2));
         BarsMaterials[1].SetFloat("_FilingValue", 0.5f - ((float)Stats.GetHp() / (float)Stats.GetMaxHp() / 2));
