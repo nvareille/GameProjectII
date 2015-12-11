@@ -17,6 +17,7 @@ public class CharacterStats : MonoBehaviour {
     public int m_bonusAttack;
 
     public int GetHp() { return m_curHp; }
+    public int GetMaxHp() { return m_maxHp;}
     public int GetAttack() { return (m_baseAttack + m_bonusAttack); }
     public int GetDefence() { return m_defence; }
 

@@ -13,6 +13,8 @@ public class CardUI : MonoBehaviour {
     [SerializeField]
     private Text _default;
     [SerializeField]
+    private Image _picture;
+    [SerializeField]
     private GameObject _filter;
 
     private CardElement elem;
@@ -34,6 +36,8 @@ public class CardUI : MonoBehaviour {
         Debug.Log(card.GetName() + " init");
         _name.text = elem.GetName();
         _level.text = elem.GetCost().ToString();
+        if (_picture != null)
+            _picture.color = elem.GetColor();
         if (_lastWill != null)
             _lastWill.text = elem.GetLastWillDesc();
         

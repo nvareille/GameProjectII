@@ -221,6 +221,7 @@ RectTransform:
   m_Children:
   - {fileID: 94062661}
   - {fileID: 2099305720}
+  - {fileID: 2066683233}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
@@ -848,6 +849,88 @@ Transform:
   - {fileID: 684837312}
   m_Father: {fileID: 830994657}
   m_RootOrder: 2
+--- !u!1001 &944665101
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 113308530}
+    m_Modifications:
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -.100006104
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -1.19000244
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_Pivot.x
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+      propertyPath: m_Pivot.y
+      value: .5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8bf005d0978182c41930110d6046b382, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &978606802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,6 +1299,11 @@ BoxCollider2D:
   m_Offset: {x: 4, y: -.400000006}
   serializedVersion: 2
   m_Size: {x: 21.2099991, y: 2}
+--- !u!224 &2066683233 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 22411618, guid: 8bf005d0978182c41930110d6046b382,
+    type: 2}
+  m_PrefabInternal: {fileID: 944665101}
 --- !u!1 &2091327312
 GameObject:
   m_ObjectHideFlags: 0
